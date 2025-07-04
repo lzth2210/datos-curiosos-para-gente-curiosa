@@ -1,4 +1,11 @@
-const boton = document.querySelector('.bx-invert-adjust');
+const botonSol = document.querySelector('.bx-sun');
+const botonLuna = document.querySelector('.bx-moon');
 const cuerpo = document.querySelector('.claro');
-const encabezado = document.querySelector('.header');
-const dato = document.querySelector('.dato');
+
+botonSol.addEventListener('click', () =>{
+    cuerpo.classList.add('oscuro');
+});
+
+botonLuna.addEventListener('click', () =>{
+    cuerpo.classList.remove('oscuro');
+});

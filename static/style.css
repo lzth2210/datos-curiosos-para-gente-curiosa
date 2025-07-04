@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: 300ms ease-in-out;
 }
 
 .claro .header{
@@ -26,6 +27,7 @@
     cursor: default;
     font-family: monospace;
     text-align: center;
+    transition: 300ms ease-in-out;
 }
 
 .claro .dato{
@@ -48,7 +50,7 @@
     aspect-ratio: 1/1;
     font-size: 3rem;
     left: 0;
-    transition: 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
 }
 
 .claro .bx-moon, .bx-sun{
@@ -78,7 +80,8 @@
 }
 
 .claro:not(.oscuro) .bx-moon{
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .claro:not(.oscuro) .bx-sun{
@@ -113,7 +116,8 @@
 }
 
 .claro.oscuro .bx-sun{
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .claro.oscuro .bx-moon{
