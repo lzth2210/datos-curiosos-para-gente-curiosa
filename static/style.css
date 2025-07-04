@@ -4,21 +4,19 @@
     box-sizing: border-box;
 }
 
-body{
+/*Base de la página*/
+.claro{
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(238, 238, 238);
 }
 
-.header{
+.claro .header{
     position: fixed;
     top: 0;
-    background-color: #265d79;
-    color: #f6dc7d;
     width: 100vw;
     height: 7vh;
     display: flex;
@@ -30,8 +28,7 @@ body{
     text-align: center;
 }
 
-.dato{
-    background-color: #3ec2b2;
+.claro .dato{
     display: flex;
     text-align: center;
     align-items: center;
@@ -42,26 +39,88 @@ body{
     border-radius: 20px;
     cursor: pointer;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: #1d3a48;
     transition: 300ms ease-in-out;
 }
 
-.dato:hover{
+.claro .bx{
+    position: fixed;
+    bottom: 0;
+    aspect-ratio: 1/1;
+    font-size: 3rem;
+    left: 0;
+    transition: 300ms ease-in-out;
+}
+
+.claro .bx-moon, .bx-sun{
+    opacity: 1;
+}
+/*Base de la página*/
+
+/*Modo claro*/
+.claro:not(.oscuro){
+    background-color: rgb(238, 238, 238);
+}
+
+.claro:not(.oscuro) .header{
+    background-color: #265d79;
+    color: #f6dc7d;
+}
+
+.claro:not(.oscuro) .dato{
+    background-color: #3ec2b2;
+    color: #1d3a48;
+}
+
+.claro:not(.oscuro) .dato:hover{
     background-color: #f6dc7d;
     color: #c3742a;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.292);
 }
 
-.bx{
-    position: fixed;
-    bottom: 0;
-    aspect-ratio: 1/1;
-    font-size: 2rem;
-    left: 0;
-    transition: 300ms ease-in-out;
+.claro:not(.oscuro) .bx-moon{
+    visibility: hidden;
+}
+
+.claro:not(.oscuro) .bx-sun{
     color: #1d3a48;
 }
 
-.bx:hover{
-    color: #ecc84a;
+.claro:not(.oscuro) .bx-sun:hover{
+    color: #f6dc7d;
 }
+/*Modo claro*/
+
+/*Modo oscuro*/
+.claro.oscuro{
+    background: #236b5b;
+    background: linear-gradient(358deg, rgba(35, 107, 91, 1) 0%, rgba(24, 47, 82, 1) 100%);
+}
+
+.claro.oscuro .header{
+    background-color: #152831;
+    color: #3ec2b2;
+}
+
+.claro.oscuro .dato{
+    background-color: #edd375;
+    color: #391258;
+}
+
+.claro.oscuro .dato:hover{
+    background-color: #391258;
+    color: #edd375;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.claro.oscuro .bx-sun{
+    visibility: hidden;
+}
+
+.claro.oscuro .bx-moon{
+    color: #f6dc7d;
+}
+
+.claro.oscuro .bx-moon:hover{
+    color: #1d3a48;
+}
+/*Modo oscuro*/
